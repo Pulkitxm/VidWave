@@ -1574,6 +1574,13 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
+"@types/fluent-ffmpeg@^2.1.25":
+  version "2.1.25"
+  resolved "https://registry.npmjs.org/@types/fluent-ffmpeg/-/fluent-ffmpeg-2.1.25.tgz"
+  integrity sha512-a9/Jtv/RVaCG4lUwWIcuClWE5eXJFoFS/oHOecOv/RS8n+lQdJzcJVmDlxA8Xbk4B82YpO88Dijcoljb6sYTcA==
+  dependencies:
+    "@types/node" "*"
+
 "@types/http-errors@*":
   version "2.0.4"
   resolved "https://registry.npmjs.org/@types/http-errors/-/http-errors-2.0.4.tgz"
@@ -2192,7 +2199,6 @@ dlv@^1.1.3:
   resolved "file:packages/docker-video"
   dependencies:
     "@aws-sdk/client-s3" "^3.627.0"
-    "@types/dotenv" "^6.1.1"
     dotenv "^16.4.5"
     ffmpeg-static "^5.2.0"
     fluent-ffmpeg "^2.1.3"
