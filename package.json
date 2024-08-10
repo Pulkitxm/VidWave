@@ -1,5 +1,5 @@
 {
-  "name": "video-stream",
+  "name": "vidwave",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -8,6 +8,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "daisyui": "^4.12.10",
     "prettier": "^3.2.5",
     "turbo": "^2.0.12",
     "typescript": "^5.4.5"
@@ -19,5 +20,8 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "react-router-dom": "^6.26.0"
+  }
 }

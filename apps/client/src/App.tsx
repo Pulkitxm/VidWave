@@ -1,3 +1,22 @@
+import Pages from "./pages";
+
+import Navbar from "./components/Navbar";
+import { useEffect, useState } from "react";
+
 export default function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  const [navHeight, setNavHeight] = useState(0);
+  useEffect(() => {
+    setNavHeight(document.querySelector("nav")?.clientHeight || 0);
+  }, []);
+  return (
+    <>
+      <Navbar />
+      <main
+        className="bg-white h-[100svh] w-screen overflow-y-scroll"
+        style={{ paddingTop: `${navHeight}px` }}
+      >
+        <Pages />
+      </main>
+    </>
+  );
 }
