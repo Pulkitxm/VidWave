@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String  @id @default(cuid())
+  email    String  @unique
+  name     String?
+  password String
+  videos   Video[]
+}
+
+model Video {
+  id          String    @id @default(cuid())
+  title       String
+  url         String
+  thumbnail   String
+  description String?
+  key         String
+  tags        String[]  @default([])
+  duration    Int?
+  likes       Int       @default(0)
+  dislikes    Int       @default(0)
+  views       Int       @default(0)
+  status      String    @default("private")
+  uploadedAt  DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  comments    Comment[]
+}
+
+model Comment {
+  id        Int       @id @default(autoincrement())
+  content   String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  parentId  Int?
+  parent    Comment?  @relation("CommentReplies", fields: [parentId], references: [id])
+  replies   Comment[] @relation("CommentReplies")
+  videoId   String
+  video     Video     @relation(fields: [videoId], references: [id])
+}
