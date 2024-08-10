@@ -1,0 +1,26 @@
+{
+  "name": "docker-video",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "start:docker": "docker run -p 3000:3000 docker-video:latest",
+    "build": "docker build -t docker-video:latest ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.627.0",
+    "@types/dotenv": "^6.1.1",
+    "dotenv": "^16.4.5",
+    "ffmpeg-static": "^5.2.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "ts-node": "^10.9.2",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "^10.0.0"
+  }
+}

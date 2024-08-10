@@ -1,9 +1,9 @@
 import { Router } from "express";
 
-import vieoRouter from "./video";
-
 const router= Router();
 
-router.use("/api/video", vieoRouter);
+router.get("/", (req, res) => {
+    res.send("Hello, World!");
+});
 
 export default router;
