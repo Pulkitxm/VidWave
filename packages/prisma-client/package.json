@@ -1,0 +1,23 @@
+{
+  "name": "@video-stream/prisma-client",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "prisma generate",
+    "build": "tsc",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.18.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.18.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "rimraf": "^5.0.0"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ]
+}
